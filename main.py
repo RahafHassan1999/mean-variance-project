@@ -1,8 +1,22 @@
-# This entrypoint file to be used in development. Start by reading README.md
-import mean_var_std
-from unittest import main
+from mean_var_std import calculate
 
-print(mean_var_std.calculate([0,1,2,3,4,5,6,7,8]))
+def get_user_input():
+    while True:
+        try:
+            user_input = input("Enter 9 numbers separated by spaces: ")
+            numbers = list(map(float, user_input.strip().split()))
+            if len(numbers) != 9:
+                raise ValueError
+            return numbers
+        except ValueError:
+            print("❌ Please enter exactly 9 valid numbers.")
 
-# Run unit tests automatically
-main(module='test_module', exit=False)
+def print_results(results):
+    print("\n✅ Calculation Results:\n")
+    for key, value in results.items():
+        print(f"{key.title()}: {value}")
+
+if __name__ == "__main__":
+    data = get_user_input()
+    results = calculate(data)
+    print_results(results)
