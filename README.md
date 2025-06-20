@@ -1,3 +1,12 @@
 # Mean-Variance-Standard Deviation Calculator
+This project is part of the FreeCodeCamp Scientific Computing with Python course.
 
-This is the boilerplate for the Mean-Variance-Standard Deviation Calculator project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator
+It defines a function `calculate()` that:
+- Accepts a list of 9 numbers.
+- Converts them into a 3x3 NumPy matrix.
+- Returns a dictionary with the mean, variance, standard deviation, max, min, and sum:
+  - Across columns
+  - Across rows
+  - For the entire matrix
+
+To test the function, run:
